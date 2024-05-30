@@ -303,7 +303,7 @@ div {
 .header .menu-fix {
   position: absolute;
   z-index: 999;
-  width: 90vw;
+  width: 33vw;
   top: 19.34375vw;
   right: 2.34375vw;
   padding: 0.9375vw;
