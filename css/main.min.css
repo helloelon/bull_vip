@@ -760,6 +760,7 @@ ul.link-dex {
 
 @media (min-width: 768px) {
   ul.link-dex {
+    display: flex;
     justify-content: start;
     grid-column-gap: 25px;
     grid-row-gap: 25px;
