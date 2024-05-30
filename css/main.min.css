@@ -769,7 +769,8 @@ ul.link-dex {
 
 .link-dex-item {
   display: block;
-  width: 60px;
+  width: 70px;
+  padding: 5px;
 }
 
 .link-dex-item:hover>img {
@@ -783,13 +784,16 @@ ul.link-dex {
 
 .link-partner {
   list-style: none;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   grid-column-gap: 10px;
   grid-row-gap: 20px;
   margin-top: 30px;
-  justify-content: center;
+}
+
+.link-partner li{
+  display: block;
+  padding: 5px;
 }
 
 .link-partner .item {
