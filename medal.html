@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VIP - Solana Vip Token</title>
+    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+<div id="app">
+    <header class="header">
+        <section class="c-topbar">
+            <a class="branb" href="./index.html">
+                <img src="./images/logo.png" alt="logo">
+            </a> <!-- / branb -->
+            <div class="nav-trigger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div> <!-- / nav trigger end -->
+        </section>
+        <!-- topbar end -->
+
+        <div class="menu-fix">
+            <a class="link-item" href="#">
+                Home
+            </a>
+            <a class="link-item" href="#about">
+                ABOUT
+            </a>
+            <a class="link-item" href="#tokenomics">
+                TOKENOMICS
+            </a>
+            <a class="link-item" href="#roadmap">
+                ROADMAP
+            </a>
+            <a class="link-item" href="https://solvip.gitbook.io/whitepaper/">
+                WHITEPAPER
+            </a>
+            <a class="link-item" href="/">
+                Buy VIP
+            </a>
+        </div>
+        <!-- menu fix end -->
+
+        <div class="btn-group">
+            <a href="#" class="btn btn-img">
+                <img class="statu-1" src="./images/logo.png">
+                <img class="statu-2" src="./images/logo.png">
+            </a>
+            <a href="#" class="btn btn-img">Home</a>
+            <a href="#about" class="btn btn-img">About</a>
+            <a href="#tokenomics" class="btn btn-img">Tokenomics</a>
+            <a href="#roadmap" class="btn btn-img">Roadmap</a>
+            <a href="https://solvip.gitbook.io/whitepaper/" class="btn btn-img">WhitePaper</a>
+            <a href="/" class="btn buy-now">
+                buy VIP
+            </a>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <main class="main">
+        <section class="section c-section-1" >
+            <div class="wrap-content">
+                <div class="content" style="text-align: center">
+                    <h1>Welcome To Join VIP 🚀🚀🚀</h1>
+                    <div id="medal"></div>
+                    <div style="text-align: center; font-size: 13px; color: #5d5b5b"> <button id="saveImage" style="border: 3px solid #896e02;background: #020202;color: #d59102;padding: 10px 20px;border-radius: 25px;">Save Medal</button> <p>If you cannot save the image by clicking the button, press and hold the image and select Save Image from the pop-up menu.</p></div>
+                </div>
+                <div class="content" style="color: #868686">
+                    <div class="title" style="color: #868686">About VIP Medal:</div>
+                    <div class="des">
+                        VIP is a ERC20 token built based on the BSC chain.
+                        It has revolutionary expanded the usage scenarios of the Ethereum chain and will have a huge impact on NFT, GAME, and DeFi.
+                        <br>
+                        <br>
+                    </div>
+                    <div class="des" style="word-break: break-word;">Share on My Social Media:</div>
+                    <ul class="link-dex">
+                        <li><a href="https://twitter.com/VIPToken" class="link-dex-item" id="fb-btn"><img src="./images/x.png" alt=""></a></li>
+                        <li><a href="https://t.me/VIPGlobal" class="link-dex-item"><img src="./images/telegram.png" alt=""></a></li>
+                        <li>
+                            <a href="https://bscscan.com/token/0x5b34595d8b0dd5478caa6f0c3a22dbe76a0b697f" class="link-dex-item">
+                                <img src="./images/sol.png" alt="">
+                            </a>
+                        </li>
+                        <li><a href="https://coinmarketcap.com" class="link-dex-item"><img src="./images/cmc.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <!-- / main end -->
+
+    <footer class="c-footer">
+        <div class="container-footer">
+            <div class="logo"><img src="./images/logo.png" style="height: 50px"></div>
+            <div class="links">
+                <span>Email: team@solvip.xyz</span>
+                <a href="https://t.me/VIPGlobal"><img src="./images/tele2.png" alt=""></a>
+                <a href="https://twitter.com/VIPToken"><img src="./images/tw-2.png" alt=""></a>
+
+            </div>
+        </div>
+
+        <div class="content">
+            © 2024 SOL VIP.  All rights reserved.
+        </div>
+    </footer>
+
+</div>
+<!-- js -->
+<script>
+    async function imgToCanvas(url) {
+        const img = document.createElement("img");
+        img.src = url;
+        img.setAttribute("crossOrigin", "anonymous");
+        await new Promise((resolve) => (img.onload = resolve));
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        canvas.getContext("2d").drawImage(img, 0, 0);
+        return canvas;
+    }
+
+    function addWatermark(canvas, text) {
+        const ctx = canvas.getContext("2d");
+        ctx.font="42px Verdana";
+        ctx.fillStyle = "#c77205";
+        ctx.textBaseline = "middle";
+        ctx.fillText(text, 290, 620);
+        return canvas;
+    }
+
+    function convasToImg(canvas) {
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");
+        image.width = "266";
+        image.id = "#medalvip";
+        return image;
+    }
+
+    async function run() {
+        const imgUrl =
+            "https://i.imgur.com/KnFVgca.png";
+        const tempCanvas = await imgToCanvas(imgUrl);
+        const timestamp = Math.floor(Date.now() / 1000) - 1717000000;
+        const canvas = addWatermark(tempCanvas, "NO."+timestamp);
+        const img = convasToImg(canvas);
+        document.getElementById("medal").appendChild(img);
+    }
+    run();
+
+    function saveBase64Image(base64Data, fileName) {
+        const link = document.createElement('a');
+        const blob = base64ToBlob(base64Data);
+        const url = URL.createObjectURL(blob);
+        link.href = url;
+        link.download = fileName;
+        link.click();
+        URL.revokeObjectURL(url);
+    }
+
+    function base64ToBlob(base64Data) {
+        const sliceSize = 512;
+        const byteCharacters = atob(base64Data.split(',')[1]);
+        const byteArrays = [];
+
+        for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            const slice = byteCharacters.slice(offset, offset + sliceSize);
+            const byteNumbers = new Array(slice.length);
+            for (let i = 0; i < slice.length; i++) {
+                byteNumbers[i] = slice.charCodeAt(i);
+            }
+
+            const byteArray = new Uint8Array(byteNumbers);
+            byteArrays.push(byteArray);
+        }
+        return new Blob(byteArrays, {type: 'image/png'});
+    }
+    const dynamicImage = document.querySelector("#medalvip");
+    const base64Data = dynamicImage.src;
+    // var base64Data = document.getElementById('medalvip').src;
+    saveBase64Image(base64Data, 'image.png');
+/*
+    var shareTitle = encodeURIComponent('我的昵称是:'); //假设你要在标题中分享用户名，需要先定义好userName
+    var shareContent = encodeURIComponent('这里是要分享的内容balabala....'); //如果内容也不固定请传入内容
+    var shareUrl = 'http://www.example.com/share.php?'+'title='+shareTitle+'&description='+shareContent; //如果有其他需要请拼接，比如+"&image="+ encodeURIComponent(shareImageUrl)；
+    //facebook
+    var shareToFbBtn = document.getElementById('fb-btn');
+    shareToFbBtn.onclick = function(){
+        FB.ui({
+            method: 'share',
+            href: shareUrl
+        }, function(response){
+            //分享回调，可留空
+        })
+    }
+    //twitter
+    var shareToTwBtn = document.getElementById('tw-btn');
+    shareToTwBtn.onclick = function(){
+        window.open('http://twitter.com/home/?status='.concat(shareTitle).concat(' ').concat(encodeURIComponent(shareUrl)));
+    } */
+</script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
