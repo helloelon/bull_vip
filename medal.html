@@ -150,7 +150,7 @@
         const imgUrl =
             "https://solvip.xyz/images/medal.png";
         const tempCanvas = await imgToCanvas(imgUrl);
-        const timestamp = Math.floor(Date.now() / 1000) - 1717000000;
+        const timestamp = Math.floor(Date.now() / 1000) - 1718000000;
         const canvas = addWatermark(tempCanvas, "NO."+timestamp);
         const img = convasToImg(canvas);
         document.getElementById("medal").appendChild(img);
