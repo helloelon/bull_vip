@@ -186,12 +186,12 @@
     }
     var btn=document.getElementById("saveImage");
     btn.onclick=function(){
-        saveBase64Image(base64Data, 'VIPMedal.png');
+        // saveBase64Image(base64Data, 'VIPMedal.png');
+        saveAs(base64Data, 'VIPMedal.png')
     }
 </script>
+<script src="https://cdn.bootcdn.net/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 <script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/jquery.fancybox.min.js"></script>
-<script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
